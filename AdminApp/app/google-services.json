@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "642368150799",
+    "firebase_url": "https://adminapp-e9a22.firebaseio.com",
+    "project_id": "adminapp-e9a22",
+    "storage_bucket": "adminapp-e9a22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642368150799:android:4d6142a5e09f18f65f327a",
+        "android_client_info": {
+          "package_name": "com.example.adminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642368150799-dp3kuk1c5kkn2siu739cvl2q58na54kn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adminapp",
+            "certificate_hash": "c986fc3f0c2e9474161fae756fdfb6a36b819f04"
+          }
+        },
+        {
+          "client_id": "642368150799-npjcetq1hfaid6tkqi6hs6jeqdh1f10t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDObBm26skIZbJXubr2xsQtNrMcKlDcvWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642368150799-npjcetq1hfaid6tkqi6hs6jeqdh1f10t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
