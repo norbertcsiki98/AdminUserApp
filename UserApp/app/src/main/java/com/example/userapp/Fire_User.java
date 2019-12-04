@@ -3,8 +3,6 @@ package com.example.userapp;
 public class Fire_User {
     private String NAME;
 
-
-
     public Fire_User(){
 
     }
