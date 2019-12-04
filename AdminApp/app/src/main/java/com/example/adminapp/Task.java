@@ -2,6 +2,7 @@ package com.example.adminapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -23,17 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Task.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Task#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Task extends Fragment {
 
     TextView group;
@@ -43,10 +35,12 @@ public class Task extends Fragment {
     FirebaseDatabase db;
     DatabaseReference dbtask;
     public static final String TAG = "YOUR-TAG-NAME";
+    public static final String SHARED_PREFS = "sharedPrefs";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View v = inflater.inflate(R.layout.fragment_task, container, false);
         group=(TextView)v.findViewById(R.id.textView2);
         add=(Button)v.findViewById(R.id.button);
@@ -68,9 +62,9 @@ public class Task extends Fragment {
     public void addTask(){
         dbtask = FirebaseDatabase.getInstance().getReference("task");
         String id=dbtask.push().getKey();
-        group=(TextView) getView().findViewById(R.id.textView2);
-        task=(EditText) getView().findViewById(R.id.editText);
-        switch1=(Switch)getView().findViewById(R.id.switch1);
+        group=getView().findViewById(R.id.textView2);
+        task= getView().findViewById(R.id.editText);
+        switch1=getView().findViewById(R.id.switch1);
         String fgroup=group.getText().toString();
         String ftask=task.getText().toString();
         String fstatus;
@@ -93,8 +87,6 @@ public class Task extends Fragment {
         dbtask.child(message).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 group=(TextView)getActivity().findViewById(R.id.textView2);
                 group.setText(value);
